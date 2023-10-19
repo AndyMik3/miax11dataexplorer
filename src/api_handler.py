@@ -23,6 +23,19 @@ class BMEApiHandler:
         maestro_df = pd.DataFrame(tk_master['master'])
         return maestro_df
 
+    def get_ohlc_data(self, tck, market) -> pd.DataFrame:
+        url = f'{self.url_base}/data/time_series'
+        params = {
+            'market': market,
+            'key': self.user_key,
+            'ticker': tck,
+            'close': False
+        }
+        response = requests.get(url, params)
+        tk_data = response.json()                      
+        df_data = pd.read_json(tk_data, typ='frame')
+        return df_data
+
     def get_close_data(self, tck, market='IBEX') -> pd.Series:
         url = f'{self.url_base}/data/time_series'
         params = {
