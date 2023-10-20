@@ -17,7 +17,7 @@ ah = BMEApiHandler()
 
 
 app.layout = html.Div(children=[
-    html.H1(children='MIAX DATA EXPLORER'),
+    html.H1(children='MIAX DATA EXPLORER 2'),
     html.Div(children='mIAx API'),
     dcc.Dropdown(
         id='menu-index',
