@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+  dash:
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8050:8050
+    env_file:
+      - .env

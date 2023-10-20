@@ -9,7 +9,7 @@ class BMEApiHandler:
     def __init__(self):
         self.url_base = 'https://miax-gateway-jog4ew3z3q-ew.a.run.app'
         self.competi = 'mia_11'
-        self.user_key = ''
+        self.user_key = os.environ['MIAX_API_KEY']
 
     def get_ticker_master(self, market='IBEX'):
         url = f'{self.url_base}/data/ticker_master'
