@@ -77,8 +77,6 @@ def plot_data(market, tck):
     )
     return fig
 
-
-
 if __name__ == '__main__':
     app.run(
         debug=True,
