@@ -1,4 +1,5 @@
 import dash
+import os
 from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output, State
@@ -79,4 +80,8 @@ def plot_data(market, tck):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(
+        debug=True,
+        host='0.0.0.0',
+        port=os.getenv("PORT", 8050)
+    )
